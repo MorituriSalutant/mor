@@ -50,22 +50,40 @@ def intro_test():
         print("Третьего слайда нет")
 
 
-intro_test()
+def menu_button_test():
+    if driver.find_element_by_xpath(xpath_button_url[1]).click():
+        print("Центральная кнопка")
+        time.sleep(2)
+    else:
+        print("Ошибка центральной нопки")
+
+    if driver.find_element_by_xpath(xpath_button_url[2]).click():
+        print("Правая кнопка")
+        time.sleep(2)
+    else:
+        print("Ошибка Правая нопки")
+
+    if driver.find_element_by_xpath(xpath_button_url[0]).click():
+        print("ЛЕвая кнопка")
+        time.sleep(2)
+    else:
+        print("Ошибка ЛЕвая нопки")
 
 
-driver.find_element_by_xpath(
+xpath_button_url = [
     '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
     '.LinearLayout/android.widget.FrameLayout/android.view.View/android.widget.HorizontalScrollView/android.widget'
-    '.LinearLayout/android.support.v7.app.ActionBar.Tab[2]').click()
+    '.LinearLayout/android.support.v7.app.ActionBar.Tab[1]',
+    '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+    '.LinearLayout/android.widget.FrameLayout/android.view.View/android.widget.HorizontalScrollView/android.widget'
+    '.LinearLayout/android.support.v7.app.ActionBar.Tab[2]',
+    '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget'
+    '.LinearLayout/android.widget.FrameLayout/android.view.View/android.widget.HorizontalScrollView/android.widget'
+    '.LinearLayout/android.support.v7.app.ActionBar.Tab[3]']
 
+intro_test()
 
-
-
-
-
-
-
-
+menu_button_test()
 
 
 
